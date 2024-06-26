@@ -1,0 +1,2262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="SAP__common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="SAP__measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CORE',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Core.V1" Alias="SAP__core"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="SAP__capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="SAP__aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="SAP__validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="SAP__UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HTML5',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.HTML5.v1" Alias="SAP__HTML5"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PDF',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PDF.v1" Alias="SAP__PDF"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_SESSION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Session.v1" Alias="SAP__session"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="com.sap.gateway.srvd.zui_mm_nfreport.v0001" Alias="SAP__self">
+            <Annotation Term="SAP__core.SchemaVersion" String="1.0.0"/>
+            <EntityType Name="nfReportItemsType">
+                <Key>
+                    <PropertyRef Name="Document"/>
+                    <PropertyRef Name="Item"/>
+                </Key>
+                <Property Name="Document" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Item" Type="Edm.String" Nullable="false" MaxLength="6"/>
+                <Property Name="Material" Type="Edm.String" Nullable="false" MaxLength="18"/>
+                <Property Name="MaterialName" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="Plant" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="CFOPCode" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="NCMCode" Type="Edm.String" Nullable="false" MaxLength="16"/>
+                <Property Name="DocumentCurrency" Type="Edm.String" Nullable="false" MaxLength="5"/>
+                <Property Name="BaseUnit" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="QuantityInBaseUnit" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3"/>
+                <Property Name="PriceAmountWithTaxes" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="6"/>
+                <Property Name="ValueAmountWithTaxes" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="DiscountAmountWithTaxes" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="FreightAmountWithTaxes" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="InsuranceAmountWithTaxes" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="ExpensesAmountWithTaxes" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="TotalAmountWithTaxes" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="IcmsTaxRate" Type="Edm.Decimal" Nullable="false" Precision="6" Scale="2"/>
+                <Property Name="IcmsTaxAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="IcmsBaseAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="IcmsExcludedBaseAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="2"/>
+                <Property Name="IcmsOtherBaseAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="IpiTaxRate" Type="Edm.Decimal" Nullable="false" Precision="6" Scale="2"/>
+                <Property Name="IpiTaxAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="IpiBaseAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="IpiExcludedBaseAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="2"/>
+                <Property Name="IpiOtherBaseAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="DifalTaxRate" Type="Edm.Decimal" Nullable="false" Precision="6" Scale="2"/>
+                <Property Name="DifalTaxAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="DifalBaseAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="DifalExcludedBaseAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="2"/>
+                <Property Name="DifalOtherBaseAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="CofinsTaxRate" Type="Edm.Decimal" Nullable="false" Precision="6" Scale="2"/>
+                <Property Name="CofinsTaxAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="CofinsBaseAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="CofinsExcludedBaseAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="2"/>
+                <Property Name="CofinsOtherBaseAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="PisTaxRate" Type="Edm.Decimal" Nullable="false" Precision="6" Scale="2"/>
+                <Property Name="PisTaxAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="PisBaseAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="PisExcludedBaseAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="2"/>
+                <Property Name="PisOtherBaseAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="StTaxRate" Type="Edm.Decimal" Nullable="false" Precision="6" Scale="2"/>
+                <Property Name="StTaxAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="StBaseAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="StExcludedBaseAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="2"/>
+                <Property Name="StOtherBaseAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="IcmsDestTaxRate" Type="Edm.Decimal" Nullable="false" Precision="6" Scale="2"/>
+                <Property Name="IcmsDestTaxAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="IcmsDestBaseAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="IcmsDestExcludedBaseAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="2"/>
+                <Property Name="IcmsDestOtherBaseAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="IcmsOrigTaxRate" Type="Edm.Decimal" Nullable="false" Precision="6" Scale="2"/>
+                <Property Name="IcmsOrigTaxAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="IcmsOrigBaseAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="IcmsOrigExcludedBaseAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="2"/>
+                <Property Name="IcmsOrigOtherBaseAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="FcpTaxRate" Type="Edm.Decimal" Nullable="false" Precision="6" Scale="2"/>
+                <Property Name="FcpTaxAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="FcpBaseAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="FcpExcludedBaseAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="2"/>
+                <Property Name="FcpOtherBaseAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="IssTaxRate" Type="Edm.Decimal" Nullable="false" Precision="6" Scale="2"/>
+                <Property Name="IssTaxAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="IssBaseAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="IssExcludedBaseAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="2"/>
+                <Property Name="IssOtherBaseAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="IssSdTaxRate" Type="Edm.Decimal" Nullable="false" Precision="6" Scale="2"/>
+                <Property Name="IssSdTaxAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="IssSdBaseAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="IssSdExcludedBaseAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="2"/>
+                <Property Name="IssSdOtherBaseAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="CofinsIrfTaxRate" Type="Edm.Decimal" Nullable="false" Precision="6" Scale="2"/>
+                <Property Name="CofinsIrfTaxAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="CofinsIrfBaseAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="CofinsIrfExcludedBaseAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="2"/>
+                <Property Name="CofinsIrfOtherBaseAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="CsllTaxRate" Type="Edm.Decimal" Nullable="false" Precision="6" Scale="2"/>
+                <Property Name="CsllTaxAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="CsllBaseAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="CsllExcludedBaseAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="2"/>
+                <Property Name="CsllOtherBaseAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="IrfTaxRate" Type="Edm.Decimal" Nullable="false" Precision="6" Scale="2"/>
+                <Property Name="IrfTaxAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="IrfBaseAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="IrfExcludedBaseAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="2"/>
+                <Property Name="IrfOtherBaseAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="PisIrfTaxRate" Type="Edm.Decimal" Nullable="false" Precision="6" Scale="2"/>
+                <Property Name="PisIrfTaxAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="PisIrfBaseAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="PisIrfExcludedBaseAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="2"/>
+                <Property Name="PisIrfOtherBaseAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <NavigationProperty Name="_Header" Type="com.sap.gateway.srvd.zui_mm_nfreport.v0001.nfReportType" Nullable="false" Partner="_Items">
+                    <ReferentialConstraint Property="Document" ReferencedProperty="Document"/>
+                </NavigationProperty>
+            </EntityType>
+            <EntityType Name="nfReportType">
+                <Key>
+                    <PropertyRef Name="Document"/>
+                </Key>
+                <Property Name="Document" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Partner" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="PartnerName" Type="Edm.String" Nullable="false" MaxLength="35"/>
+                <Property Name="PostingDate" Type="Edm.Date"/>
+                <Property Name="IssueDate" Type="Edm.Date"/>
+                <Property Name="BusinessPlace" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="CompanyCode" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="FiscalYear" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="NFeNumber" Type="Edm.String" Nullable="false" MaxLength="9"/>
+                <Property Name="Type" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="Model" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="Direction" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="DocumentCurrency" Type="Edm.String" Nullable="false" MaxLength="5"/>
+                <Property Name="NetAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="2"/>
+                <Property Name="CreatedByUser" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="CreationDate" Type="Edm.Date"/>
+                <Property Name="IsCanceled" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="CancellationDate" Type="Edm.Date"/>
+                <Property Name="Serie" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="AccessKey" Type="Edm.String" Nullable="false" MaxLength="44"/>
+                <Property Name="FreightAmountWithTaxes" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="InsuranceAmountWithTaxes" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="ExpensesAmountWithTaxes" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="DiscountAmountWithTaxe" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="ValueAmountWithTaxes" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <NavigationProperty Name="_Items" Type="Collection(com.sap.gateway.srvd.zui_mm_nfreport.v0001.nfReportItemsType)" Partner="_Header">
+                    <OnDelete Action="Cascade"/>
+                </NavigationProperty>
+            </EntityType>
+            <EntityContainer Name="Container">
+                <EntitySet Name="nfReport" EntityType="com.sap.gateway.srvd.zui_mm_nfreport.v0001.nfReportType">
+                    <NavigationPropertyBinding Path="_Items" Target="nfReportItems"/>
+                </EntitySet>
+                <EntitySet Name="nfReportItems" EntityType="com.sap.gateway.srvd.zui_mm_nfreport.v0001.nfReportItemsType">
+                    <NavigationPropertyBinding Path="_Header" Target="nfReport"/>
+                </EntitySet>
+            </EntityContainer>
+            <Annotations Target="SAP__self.nfReportItemsType/Document">
+                <Annotation Term="SAP__common.IsDigitSequence"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Document Number"/>
+                <Annotation Term="SAP__common.Heading" String="Doc. No."/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/Item">
+                <Annotation Term="SAP__common.IsDigitSequence"/>
+                <Annotation Term="SAP__common.Label" String="Document Item Number"/>
+                <Annotation Term="SAP__common.Heading" String="INo."/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/Material">
+                <Annotation Term="SAP__common.Text" Path="MaterialName">
+                    <Annotation Term="SAP__UI.TextArrangement" EnumMember="SAP__UI.TextArrangementType/TextLast"/>
+                </Annotation>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Material"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Material Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/Plant">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Plant"/>
+                <Annotation Term="SAP__common.Heading" String="Plnt"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/NCMCode">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Control Code"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/DocumentCurrency">
+                <Annotation Term="SAP__common.IsCurrency"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Document Currency"/>
+                <Annotation Term="SAP__common.Heading" String="Curr."/>
+                <Annotation Term="SAP__common.QuickInfo" String="SD Document Currency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/BaseUnit">
+                <Annotation Term="SAP__common.IsUnit"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Unit of measure"/>
+                <Annotation Term="SAP__common.Heading" String="UoM"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Base unit of measure"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/QuantityInBaseUnit">
+                <Annotation Term="SAP__measures.Unit" Path="BaseUnit"/>
+                <Annotation Term="SAP__common.Label" String="Quantity"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/PriceAmountWithTaxes">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+                <Annotation Term="SAP__common.Label" String="Net Price"/>
+                <Annotation Term="SAP__common.Heading" String="Net"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Net Price Including Tax"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/ValueAmountWithTaxes">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+                <Annotation Term="SAP__common.Label" String="Value"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Net Value including taxes"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/DiscountAmountWithTaxes">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+                <Annotation Term="SAP__common.Label" String="Discount"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Discount value including taxes"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/FreightAmountWithTaxes">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+                <Annotation Term="SAP__common.Label" String="Freight"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Freight value including taxes"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/InsuranceAmountWithTaxes">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+                <Annotation Term="SAP__common.Label" String="Insurance"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Insurance value including taxes"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/ExpensesAmountWithTaxes">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+                <Annotation Term="SAP__common.Label" String="Expenses"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Expenses including taxes"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/TotalAmountWithTaxes">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+                <Annotation Term="SAP__common.Label" String="Total"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Net value/Freight/Insurance/Expenses/Discount"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/IcmsTaxAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/IcmsBaseAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/IcmsExcludedBaseAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/IcmsOtherBaseAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/IpiTaxAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/IpiBaseAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/IpiExcludedBaseAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/IpiOtherBaseAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/DifalTaxAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/DifalBaseAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/DifalExcludedBaseAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/DifalOtherBaseAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/CofinsTaxAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/CofinsBaseAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/CofinsExcludedBaseAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/CofinsOtherBaseAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/PisTaxAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/PisBaseAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/PisExcludedBaseAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/PisOtherBaseAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/StTaxAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/StBaseAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/StExcludedBaseAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/StOtherBaseAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/IcmsDestTaxAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/IcmsDestBaseAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/IcmsDestExcludedBaseAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/IcmsDestOtherBaseAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/IcmsOrigTaxAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/IcmsOrigBaseAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/IcmsOrigExcludedBaseAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/IcmsOrigOtherBaseAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/FcpTaxAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/FcpBaseAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/FcpExcludedBaseAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/FcpOtherBaseAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/IssTaxAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/IssBaseAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/IssExcludedBaseAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/IssOtherBaseAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/IssSdTaxAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/IssSdBaseAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/IssSdExcludedBaseAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/IssSdOtherBaseAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/CofinsIrfTaxAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/CofinsIrfBaseAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/CofinsIrfExcludedBaseAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/CofinsIrfOtherBaseAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/CsllTaxAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/CsllBaseAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/CsllExcludedBaseAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/CsllOtherBaseAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/IrfTaxAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/IrfBaseAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/IrfExcludedBaseAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/IrfOtherBaseAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/PisIrfTaxAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/PisIrfBaseAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/PisIrfExcludedBaseAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/PisIrfOtherBaseAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/nfReportItems">
+                <Annotation Term="SAP__capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="_Header"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Plant"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="NCMCode"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="QuantityInBaseUnit"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="ValueAmountWithTaxes"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="DiscountAmountWithTaxes"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="FreightAmountWithTaxes"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="InsuranceAmountWithTaxes"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="ExpensesAmountWithTaxes"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="TotalAmountWithTaxes"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="IcmsTaxAmount"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="IcmsBaseAmount"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="IcmsOtherBaseAmount"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="IpiTaxAmount"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="IpiBaseAmount"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="IpiOtherBaseAmount"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="DifalTaxAmount"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="DifalBaseAmount"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="DifalOtherBaseAmount"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="CofinsTaxAmount"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="CofinsBaseAmount"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="CofinsOtherBaseAmount"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="PisTaxAmount"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="PisBaseAmount"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="PisOtherBaseAmount"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="StTaxAmount"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="StBaseAmount"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="StOtherBaseAmount"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="IcmsDestTaxAmount"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="IcmsDestBaseAmount"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="IcmsDestOtherBaseAmount"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="IcmsOrigTaxAmount"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="IcmsOrigBaseAmount"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="IcmsOrigOtherBaseAmount"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="FcpTaxAmount"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="FcpBaseAmount"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="FcpOtherBaseAmount"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="IssTaxAmount"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="IssBaseAmount"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="IssOtherBaseAmount"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="IssSdTaxAmount"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="IssSdBaseAmount"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="IssSdOtherBaseAmount"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="CofinsIrfTaxAmount"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="CofinsIrfBaseAmount"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="CofinsIrfOtherBaseAmount"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="CsllTaxAmount"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="CsllBaseAmount"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="CsllOtherBaseAmount"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="IrfTaxAmount"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="IrfBaseAmount"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="IrfOtherBaseAmount"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="PisIrfTaxAmount"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="PisIrfBaseAmount"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="PisIrfOtherBaseAmount"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType">
+                <Annotation Term="SAP__common.Label" String="APP Relatório NF - Itens da NF"/>
+                <Annotation Term="SAP__UI.Facets">
+                    <Collection>
+                        <Record Type="SAP__UI.CollectionFacet">
+                            <PropertyValue Property="Label" String="Informações"/>
+                            <PropertyValue Property="ID" String="ItemInfo"/>
+                            <PropertyValue Property="Facets">
+                                <Collection>
+                                    <Record Type="SAP__UI.ReferenceFacet">
+                                        <PropertyValue Property="ID" String="ItemData"/>
+                                        <PropertyValue Property="Target" AnnotationPath="@SAP__UI.Identification"/>
+                                    </Record>
+                                </Collection>
+                            </PropertyValue>
+                        </Record>
+                        <Record Type="SAP__UI.CollectionFacet">
+                            <PropertyValue Property="Label" String="Valores"/>
+                            <PropertyValue Property="ID" String="ItemValues"/>
+                            <PropertyValue Property="Facets">
+                                <Collection>
+                                    <Record Type="SAP__UI.ReferenceFacet">
+                                        <PropertyValue Property="ID" String="ItValues"/>
+                                        <PropertyValue Property="Target" AnnotationPath="@SAP__UI.FieldGroup#VALUES"/>
+                                    </Record>
+                                </Collection>
+                            </PropertyValue>
+                        </Record>
+                        <Record Type="SAP__UI.CollectionFacet">
+                            <PropertyValue Property="Label" String="Impostos"/>
+                            <PropertyValue Property="ID" String="ItemTaxes"/>
+                            <PropertyValue Property="Facets">
+                                <Collection>
+                                    <Record Type="SAP__UI.ReferenceFacet">
+                                        <PropertyValue Property="Label" String="ICMS"/>
+                                        <PropertyValue Property="ID" String="ICMS"/>
+                                        <PropertyValue Property="Target" AnnotationPath="@SAP__UI.FieldGroup#ICMS"/>
+                                    </Record>
+                                    <Record Type="SAP__UI.ReferenceFacet">
+                                        <PropertyValue Property="Label" String="IPI"/>
+                                        <PropertyValue Property="ID" String="IPI"/>
+                                        <PropertyValue Property="Target" AnnotationPath="@SAP__UI.FieldGroup#IPI"/>
+                                    </Record>
+                                    <Record Type="SAP__UI.ReferenceFacet">
+                                        <PropertyValue Property="Label" String="DIFAL"/>
+                                        <PropertyValue Property="ID" String="DIFAL"/>
+                                        <PropertyValue Property="Target" AnnotationPath="@SAP__UI.FieldGroup#DIFAL"/>
+                                    </Record>
+                                    <Record Type="SAP__UI.ReferenceFacet">
+                                        <PropertyValue Property="Label" String="COFINS"/>
+                                        <PropertyValue Property="ID" String="COFINS"/>
+                                        <PropertyValue Property="Target" AnnotationPath="@SAP__UI.FieldGroup#COFINS"/>
+                                    </Record>
+                                    <Record Type="SAP__UI.ReferenceFacet">
+                                        <PropertyValue Property="Label" String="PIS"/>
+                                        <PropertyValue Property="ID" String="PIS"/>
+                                        <PropertyValue Property="Target" AnnotationPath="@SAP__UI.FieldGroup#PIS"/>
+                                    </Record>
+                                    <Record Type="SAP__UI.ReferenceFacet">
+                                        <PropertyValue Property="Label" String="ST"/>
+                                        <PropertyValue Property="ID" String="ST"/>
+                                        <PropertyValue Property="Target" AnnotationPath="@SAP__UI.FieldGroup#ST"/>
+                                    </Record>
+                                    <Record Type="SAP__UI.ReferenceFacet">
+                                        <PropertyValue Property="Label" String="ICMS partição destino"/>
+                                        <PropertyValue Property="ID" String="ICMSDEST"/>
+                                        <PropertyValue Property="Target" AnnotationPath="@SAP__UI.FieldGroup#ICMSDEST"/>
+                                    </Record>
+                                    <Record Type="SAP__UI.ReferenceFacet">
+                                        <PropertyValue Property="Label" String="ICMS partição origem"/>
+                                        <PropertyValue Property="ID" String="ICMSORIG"/>
+                                        <PropertyValue Property="Target" AnnotationPath="@SAP__UI.FieldGroup#ICMSORIG"/>
+                                    </Record>
+                                    <Record Type="SAP__UI.ReferenceFacet">
+                                        <PropertyValue Property="Label" String="FCP"/>
+                                        <PropertyValue Property="ID" String="FCP"/>
+                                        <PropertyValue Property="Target" AnnotationPath="@SAP__UI.FieldGroup#FCP"/>
+                                    </Record>
+                                    <Record Type="SAP__UI.ReferenceFacet">
+                                        <PropertyValue Property="Label" String="ISS"/>
+                                        <PropertyValue Property="ID" String="ISS"/>
+                                        <PropertyValue Property="Target" AnnotationPath="@SAP__UI.FieldGroup#ISS"/>
+                                    </Record>
+                                    <Record Type="SAP__UI.ReferenceFacet">
+                                        <PropertyValue Property="Label" String="ISS SD"/>
+                                        <PropertyValue Property="ID" String="ISSSD"/>
+                                        <PropertyValue Property="Target" AnnotationPath="@SAP__UI.FieldGroup#ISSSD"/>
+                                    </Record>
+                                    <Record Type="SAP__UI.ReferenceFacet">
+                                        <PropertyValue Property="Label" String="COFINS IRF"/>
+                                        <PropertyValue Property="ID" String="COFINSIRF"/>
+                                        <PropertyValue Property="Target" AnnotationPath="@SAP__UI.FieldGroup#COFINSIRF"/>
+                                    </Record>
+                                    <Record Type="SAP__UI.ReferenceFacet">
+                                        <PropertyValue Property="Label" String="CSLL"/>
+                                        <PropertyValue Property="ID" String="CSLL"/>
+                                        <PropertyValue Property="Target" AnnotationPath="@SAP__UI.FieldGroup#CSLL"/>
+                                    </Record>
+                                    <Record Type="SAP__UI.ReferenceFacet">
+                                        <PropertyValue Property="Label" String="IRF"/>
+                                        <PropertyValue Property="ID" String="IRF"/>
+                                        <PropertyValue Property="Target" AnnotationPath="@SAP__UI.FieldGroup#IRF"/>
+                                    </Record>
+                                    <Record Type="SAP__UI.ReferenceFacet">
+                                        <PropertyValue Property="Label" String="PIS IRF"/>
+                                        <PropertyValue Property="ID" String="PISIRF"/>
+                                        <PropertyValue Property="Target" AnnotationPath="@SAP__UI.FieldGroup#PISIRF"/>
+                                    </Record>
+                                </Collection>
+                            </PropertyValue>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.FieldGroup" Qualifier="COFINS">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Taxa COFINS"/>
+                                    <PropertyValue Property="Value" Path="CofinsTaxRate"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Valor COFINS"/>
+                                    <PropertyValue Property="Value" Path="CofinsTaxAmount"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Base COFINS"/>
+                                    <PropertyValue Property="Value" Path="CofinsBaseAmount"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Base Excl. COFINS"/>
+                                    <PropertyValue Property="Value" Path="CofinsExcludedBaseAmount"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Outr. Bases COFINS"/>
+                                    <PropertyValue Property="Value" Path="CofinsOtherBaseAmount"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.FieldGroup" Qualifier="COFINSIRF">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Taxa COFINS IRF"/>
+                                    <PropertyValue Property="Value" Path="CofinsIrfTaxRate"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Valor COFINS IRF"/>
+                                    <PropertyValue Property="Value" Path="CofinsIrfTaxAmount"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Base COFINS IRF"/>
+                                    <PropertyValue Property="Value" Path="CofinsIrfBaseAmount"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Base Excl. COFINS IRF"/>
+                                    <PropertyValue Property="Value" Path="CofinsIrfExcludedBaseAmount"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Outr. Bases COFINS IRF"/>
+                                    <PropertyValue Property="Value" Path="CofinsIrfOtherBaseAmount"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.FieldGroup" Qualifier="CSLL">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Taxa CSLL"/>
+                                    <PropertyValue Property="Value" Path="CsllTaxRate"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Valor CSLL"/>
+                                    <PropertyValue Property="Value" Path="CsllTaxAmount"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Base CSLL"/>
+                                    <PropertyValue Property="Value" Path="CsllBaseAmount"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Base Excl. CSLL"/>
+                                    <PropertyValue Property="Value" Path="CsllExcludedBaseAmount"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Outr. Bases CSLL"/>
+                                    <PropertyValue Property="Value" Path="CsllOtherBaseAmount"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.FieldGroup" Qualifier="DIFAL">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Taxa DIFAL"/>
+                                    <PropertyValue Property="Value" Path="DifalTaxRate"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Valor DIFAL"/>
+                                    <PropertyValue Property="Value" Path="DifalTaxAmount"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Base DIFAL"/>
+                                    <PropertyValue Property="Value" Path="DifalBaseAmount"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Base Excl. DIFAL"/>
+                                    <PropertyValue Property="Value" Path="DifalExcludedBaseAmount"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Outr. Bases DIFAL"/>
+                                    <PropertyValue Property="Value" Path="DifalOtherBaseAmount"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.FieldGroup" Qualifier="FCP">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Taxa FCP"/>
+                                    <PropertyValue Property="Value" Path="FcpTaxRate"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Valor FCP"/>
+                                    <PropertyValue Property="Value" Path="FcpTaxAmount"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Base FCP"/>
+                                    <PropertyValue Property="Value" Path="FcpBaseAmount"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Base Excl. FCP"/>
+                                    <PropertyValue Property="Value" Path="FcpExcludedBaseAmount"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Outr. Bases FCP"/>
+                                    <PropertyValue Property="Value" Path="FcpOtherBaseAmount"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.FieldGroup" Qualifier="ICMS">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Taxa ICMS"/>
+                                    <PropertyValue Property="Value" Path="IcmsTaxRate"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Valor ICMS"/>
+                                    <PropertyValue Property="Value" Path="IcmsTaxAmount"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Base ICMS"/>
+                                    <PropertyValue Property="Value" Path="IcmsBaseAmount"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Base Excl. ICMS"/>
+                                    <PropertyValue Property="Value" Path="IcmsExcludedBaseAmount"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Outr. Bases ICMS"/>
+                                    <PropertyValue Property="Value" Path="IcmsOtherBaseAmount"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.FieldGroup" Qualifier="ICMSDEST">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Taxa ICMS Dest."/>
+                                    <PropertyValue Property="Value" Path="IcmsDestTaxRate"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Valor ICMS Dest."/>
+                                    <PropertyValue Property="Value" Path="IcmsDestTaxAmount"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Base ICMS Dest."/>
+                                    <PropertyValue Property="Value" Path="IcmsDestBaseAmount"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Base Excl. ICMS Dest."/>
+                                    <PropertyValue Property="Value" Path="IcmsDestExcludedBaseAmount"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Outr. Bases ICMS Dest."/>
+                                    <PropertyValue Property="Value" Path="IcmsDestOtherBaseAmount"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.FieldGroup" Qualifier="ICMSORIG">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Taxa ICMS Orig."/>
+                                    <PropertyValue Property="Value" Path="IcmsOrigTaxRate"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Valor ICMS Orig."/>
+                                    <PropertyValue Property="Value" Path="IcmsOrigTaxAmount"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Base ICMS Orig."/>
+                                    <PropertyValue Property="Value" Path="IcmsOrigBaseAmount"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Base Excl. ICMS Orig."/>
+                                    <PropertyValue Property="Value" Path="IcmsOrigExcludedBaseAmount"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Outr. Bases ICMS Orig."/>
+                                    <PropertyValue Property="Value" Path="IcmsOrigOtherBaseAmount"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.FieldGroup" Qualifier="IPI">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Valor IPI"/>
+                                    <PropertyValue Property="Value" Path="IpiTaxAmount"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Taxa IPI"/>
+                                    <PropertyValue Property="Value" Path="IpiTaxRate"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Base IPI"/>
+                                    <PropertyValue Property="Value" Path="IpiBaseAmount"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Base Excl. IPI"/>
+                                    <PropertyValue Property="Value" Path="IpiExcludedBaseAmount"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Outr. Bases IPI"/>
+                                    <PropertyValue Property="Value" Path="IpiOtherBaseAmount"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.FieldGroup" Qualifier="IRF">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Taxa IRF"/>
+                                    <PropertyValue Property="Value" Path="IrfTaxRate"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Valor IRF"/>
+                                    <PropertyValue Property="Value" Path="IrfTaxAmount"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Base IRF"/>
+                                    <PropertyValue Property="Value" Path="IrfBaseAmount"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Base Excl. IRF"/>
+                                    <PropertyValue Property="Value" Path="IrfExcludedBaseAmount"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Outr. Bases IRF"/>
+                                    <PropertyValue Property="Value" Path="IrfOtherBaseAmount"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.FieldGroup" Qualifier="ISS">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Taxa ISS"/>
+                                    <PropertyValue Property="Value" Path="IssTaxRate"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Valor ISS"/>
+                                    <PropertyValue Property="Value" Path="IssTaxAmount"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Base ISS"/>
+                                    <PropertyValue Property="Value" Path="IssBaseAmount"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Base Excl. ISS"/>
+                                    <PropertyValue Property="Value" Path="IssExcludedBaseAmount"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Outr. Bases ISS"/>
+                                    <PropertyValue Property="Value" Path="IssOtherBaseAmount"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.FieldGroup" Qualifier="ISSSD">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Taxa ISS SD"/>
+                                    <PropertyValue Property="Value" Path="IssSdTaxRate"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Valor ISS SD"/>
+                                    <PropertyValue Property="Value" Path="IssSdTaxAmount"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Base ISS SD"/>
+                                    <PropertyValue Property="Value" Path="IssSdBaseAmount"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Base Excl. ISS SD"/>
+                                    <PropertyValue Property="Value" Path="IssSdExcludedBaseAmount"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Outr. Bases ISS SD"/>
+                                    <PropertyValue Property="Value" Path="IssSdOtherBaseAmount"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.FieldGroup" Qualifier="PIS">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Taxa PIS"/>
+                                    <PropertyValue Property="Value" Path="PisTaxRate"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Valor PIS"/>
+                                    <PropertyValue Property="Value" Path="PisTaxAmount"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Base PIS"/>
+                                    <PropertyValue Property="Value" Path="PisBaseAmount"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Base Excl. PIS"/>
+                                    <PropertyValue Property="Value" Path="PisExcludedBaseAmount"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Outr. Bases PIS"/>
+                                    <PropertyValue Property="Value" Path="PisOtherBaseAmount"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.FieldGroup" Qualifier="PISIRF">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Taxa PIS IRF"/>
+                                    <PropertyValue Property="Value" Path="PisIrfTaxRate"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Valor PIS IRF"/>
+                                    <PropertyValue Property="Value" Path="PisIrfTaxAmount"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Base PIS IRF"/>
+                                    <PropertyValue Property="Value" Path="PisIrfBaseAmount"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Base Excl. PIS IRF"/>
+                                    <PropertyValue Property="Value" Path="PisIrfExcludedBaseAmount"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Putr. Bases PIS IRF"/>
+                                    <PropertyValue Property="Value" Path="PisIrfOtherBaseAmount"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.FieldGroup" Qualifier="ST">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Taxa ST"/>
+                                    <PropertyValue Property="Value" Path="StTaxRate"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Valor ST"/>
+                                    <PropertyValue Property="Value" Path="StTaxAmount"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Base ST"/>
+                                    <PropertyValue Property="Value" Path="StBaseAmount"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Base Excl. ST"/>
+                                    <PropertyValue Property="Value" Path="StExcludedBaseAmount"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Outr. Bases ST"/>
+                                    <PropertyValue Property="Value" Path="StOtherBaseAmount"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.FieldGroup" Qualifier="VALUES">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="PriceAmountWithTaxes"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="ValueAmountWithTaxes"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="DiscountAmountWithTaxes"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="FreightAmountWithTaxes"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="InsuranceAmountWithTaxes"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="ExpensesAmountWithTaxes"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="TotalAmountWithTaxes"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.HeaderInfo">
+                    <Annotation Term="SAP__core.Messages">
+                        <Collection>
+                            <Record>
+                                <PropertyValue Property="message" String="UI.HEADERINFO: TypeNamePlural is mandatory"/>
+                                <PropertyValue Property="severity" String="error"/>
+                            </Record>
+                        </Collection>
+                    </Annotation>
+                    <Record>
+                        <PropertyValue Property="TypeName" String="Item da Nota Fiscal"/>
+                        <PropertyValue Property="Title">
+                            <Record Type="SAP__UI.DataField">
+                                <PropertyValue Property="Label" String="Item"/>
+                                <PropertyValue Property="Value" Path="Item"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.Identification">
+                    <Collection>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Item"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Material"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Plant"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="CFOPCode"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="NCMCode"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="QuantityInBaseUnit"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.LineItem">
+                    <Collection>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Item"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Material"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Plant"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="CFOPCode"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="NCMCode"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="QuantityInBaseUnit"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="PriceAmountWithTaxes"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="ValueAmountWithTaxes"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="DiscountAmountWithTaxes"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="FreightAmountWithTaxes"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="InsuranceAmountWithTaxes"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Valor IPI"/>
+                            <PropertyValue Property="Value" Path="IpiTaxAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="ExpensesAmountWithTaxes"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="TotalAmountWithTaxes"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Taxa ICMS"/>
+                            <PropertyValue Property="Value" Path="IcmsTaxRate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Valor ICMS"/>
+                            <PropertyValue Property="Value" Path="IcmsTaxAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Base ICMS"/>
+                            <PropertyValue Property="Value" Path="IcmsBaseAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Base Excl. ICMS"/>
+                            <PropertyValue Property="Value" Path="IcmsExcludedBaseAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Outr. Bases ICMS"/>
+                            <PropertyValue Property="Value" Path="IcmsOtherBaseAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Taxa IPI"/>
+                            <PropertyValue Property="Value" Path="IpiTaxRate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Base IPI"/>
+                            <PropertyValue Property="Value" Path="IpiBaseAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Base Excl. IPI"/>
+                            <PropertyValue Property="Value" Path="IpiExcludedBaseAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Outr. Bases IPI"/>
+                            <PropertyValue Property="Value" Path="IpiOtherBaseAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Taxa DIFAL"/>
+                            <PropertyValue Property="Value" Path="DifalTaxRate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Valor DIFAL"/>
+                            <PropertyValue Property="Value" Path="DifalTaxAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Base DIFAL"/>
+                            <PropertyValue Property="Value" Path="DifalBaseAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Base Excl. DIFAL"/>
+                            <PropertyValue Property="Value" Path="DifalExcludedBaseAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Outr. Bases DIFAL"/>
+                            <PropertyValue Property="Value" Path="DifalOtherBaseAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Taxa COFINS"/>
+                            <PropertyValue Property="Value" Path="CofinsTaxRate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Valor COFINS"/>
+                            <PropertyValue Property="Value" Path="CofinsTaxAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Base COFINS"/>
+                            <PropertyValue Property="Value" Path="CofinsBaseAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Base Excl. COFINS"/>
+                            <PropertyValue Property="Value" Path="CofinsExcludedBaseAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Outr. Bases COFINS"/>
+                            <PropertyValue Property="Value" Path="CofinsOtherBaseAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Taxa PIS"/>
+                            <PropertyValue Property="Value" Path="PisTaxRate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Valor PIS"/>
+                            <PropertyValue Property="Value" Path="PisTaxAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Base PIS"/>
+                            <PropertyValue Property="Value" Path="PisBaseAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Base Excl. PIS"/>
+                            <PropertyValue Property="Value" Path="PisExcludedBaseAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Outr. Bases PIS"/>
+                            <PropertyValue Property="Value" Path="PisOtherBaseAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Taxa ST"/>
+                            <PropertyValue Property="Value" Path="StTaxRate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Valor ST"/>
+                            <PropertyValue Property="Value" Path="StTaxAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Base ST"/>
+                            <PropertyValue Property="Value" Path="StBaseAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Base Excl. ST"/>
+                            <PropertyValue Property="Value" Path="StExcludedBaseAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Outr. Bases ST"/>
+                            <PropertyValue Property="Value" Path="StOtherBaseAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Taxa ICMS Dest."/>
+                            <PropertyValue Property="Value" Path="IcmsDestTaxRate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Valor ICMS Dest."/>
+                            <PropertyValue Property="Value" Path="IcmsDestTaxAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Base ICMS Dest."/>
+                            <PropertyValue Property="Value" Path="IcmsDestBaseAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Base Excl. ICMS Dest."/>
+                            <PropertyValue Property="Value" Path="IcmsDestExcludedBaseAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Outr. Bases ICMS Dest."/>
+                            <PropertyValue Property="Value" Path="IcmsDestOtherBaseAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Taxa ICMS Orig."/>
+                            <PropertyValue Property="Value" Path="IcmsOrigTaxRate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Valor ICMS Orig."/>
+                            <PropertyValue Property="Value" Path="IcmsOrigTaxAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Base ICMS Orig."/>
+                            <PropertyValue Property="Value" Path="IcmsOrigBaseAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Base Excl. ICMS Orig."/>
+                            <PropertyValue Property="Value" Path="IcmsOrigExcludedBaseAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Outr. Bases ICMS Orig."/>
+                            <PropertyValue Property="Value" Path="IcmsOrigOtherBaseAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Taxa FCP"/>
+                            <PropertyValue Property="Value" Path="FcpTaxRate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Valor FCP"/>
+                            <PropertyValue Property="Value" Path="FcpTaxAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Base FCP"/>
+                            <PropertyValue Property="Value" Path="FcpBaseAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Base Excl. FCP"/>
+                            <PropertyValue Property="Value" Path="FcpExcludedBaseAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Outr. Bases FCP"/>
+                            <PropertyValue Property="Value" Path="FcpOtherBaseAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Taxa ISS"/>
+                            <PropertyValue Property="Value" Path="IssTaxRate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Valor ISS"/>
+                            <PropertyValue Property="Value" Path="IssTaxAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Base ISS"/>
+                            <PropertyValue Property="Value" Path="IssBaseAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Base Excl. ISS"/>
+                            <PropertyValue Property="Value" Path="IssExcludedBaseAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Outr. Bases ISS"/>
+                            <PropertyValue Property="Value" Path="IssOtherBaseAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Taxa ISS SD"/>
+                            <PropertyValue Property="Value" Path="IssSdTaxRate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Valor ISS SD"/>
+                            <PropertyValue Property="Value" Path="IssSdTaxAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Base ISS SD"/>
+                            <PropertyValue Property="Value" Path="IssSdBaseAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Base Excl. ISS SD"/>
+                            <PropertyValue Property="Value" Path="IssSdExcludedBaseAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Outr. Bases ISS SD"/>
+                            <PropertyValue Property="Value" Path="IssSdOtherBaseAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Taxa COFINS IRF"/>
+                            <PropertyValue Property="Value" Path="CofinsIrfTaxRate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Valor COFINS IRF"/>
+                            <PropertyValue Property="Value" Path="CofinsIrfTaxAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Base COFINS IRF"/>
+                            <PropertyValue Property="Value" Path="CofinsIrfBaseAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Base Excl. COFINS IRF"/>
+                            <PropertyValue Property="Value" Path="CofinsIrfExcludedBaseAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Outr. Bases COFINS IRF"/>
+                            <PropertyValue Property="Value" Path="CofinsIrfOtherBaseAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Taxa CSLL"/>
+                            <PropertyValue Property="Value" Path="CsllTaxRate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Valor CSLL"/>
+                            <PropertyValue Property="Value" Path="CsllTaxAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Base CSLL"/>
+                            <PropertyValue Property="Value" Path="CsllBaseAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Base Excl. CSLL"/>
+                            <PropertyValue Property="Value" Path="CsllExcludedBaseAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Outr. Bases CSLL"/>
+                            <PropertyValue Property="Value" Path="CsllOtherBaseAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Taxa IRF"/>
+                            <PropertyValue Property="Value" Path="IrfTaxRate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Valor IRF"/>
+                            <PropertyValue Property="Value" Path="IrfTaxAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Base IRF"/>
+                            <PropertyValue Property="Value" Path="IrfBaseAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Base Excl. IRF"/>
+                            <PropertyValue Property="Value" Path="IrfExcludedBaseAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Outr. Bases IRF"/>
+                            <PropertyValue Property="Value" Path="IrfOtherBaseAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Taxa PIS IRF"/>
+                            <PropertyValue Property="Value" Path="PisIrfTaxRate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Valor PIS IRF"/>
+                            <PropertyValue Property="Value" Path="PisIrfTaxAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Base PIS IRF"/>
+                            <PropertyValue Property="Value" Path="PisIrfBaseAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Base Excl. PIS IRF"/>
+                            <PropertyValue Property="Value" Path="PisIrfExcludedBaseAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Putr. Bases PIS IRF"/>
+                            <PropertyValue Property="Value" Path="PisIrfOtherBaseAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="MaterialName"/>
+                            <Annotation Term="SAP__UI.Hidden"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.PresentationVariant">
+                    <Record>
+                        <PropertyValue Property="SortOrder">
+                            <Collection>
+                                <Record Type="SAP__common.SortOrderType">
+                                    <PropertyValue Property="Property" PropertyPath="Item"/>
+                                    <PropertyValue Property="Descending" Bool="false"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.Container">
+                <Annotation Term="SAP__CodeList.CurrencyCodes">
+                    <Record>
+                        <PropertyValue Property="Url" String="../../../../default/iwbep/common/0001/$metadata"/>
+                        <PropertyValue Property="CollectionPath" String="Currencies"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__CodeList.UnitsOfMeasure">
+                    <Record>
+                        <PropertyValue Property="Url" String="../../../../default/iwbep/common/0001/$metadata"/>
+                        <PropertyValue Property="CollectionPath" String="UnitsOfMeasure"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__aggregation.ApplySupported">
+                    <Record>
+                        <PropertyValue Property="Transformations">
+                            <Collection>
+                                <String>aggregate</String>
+                                <String>groupby</String>
+                                <String>filter</String>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Rollup" EnumMember="SAP__aggregation.RollupType/None"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+                <Annotation Term="SAP__capabilities.FilterFunctions">
+                    <Collection>
+                        <String>eq</String>
+                        <String>ne</String>
+                        <String>gt</String>
+                        <String>ge</String>
+                        <String>lt</String>
+                        <String>le</String>
+                        <String>and</String>
+                        <String>or</String>
+                        <String>contains</String>
+                        <String>startswith</String>
+                        <String>endswith</String>
+                        <String>any</String>
+                        <String>all</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SupportedFormats">
+                    <Collection>
+                        <String>application/json</String>
+                        <String>application/pdf</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__PDF.Features">
+                    <Record>
+                        <PropertyValue Property="DocumentDescriptionReference" String="../../../../default/iwbep/common/0001/$metadata"/>
+                        <PropertyValue Property="DocumentDescriptionCollection" String="MyDocumentDescriptions"/>
+                        <PropertyValue Property="ArchiveFormat" Bool="true"/>
+                        <PropertyValue Property="Border" Bool="true"/>
+                        <PropertyValue Property="CoverPage" Bool="true"/>
+                        <PropertyValue Property="FitToPage" Bool="true"/>
+                        <PropertyValue Property="FontName" Bool="true"/>
+                        <PropertyValue Property="FontSize" Bool="true"/>
+                        <PropertyValue Property="Margin" Bool="true"/>
+                        <PropertyValue Property="Signature" Bool="true"/>
+                        <PropertyValue Property="ResultSizeDefault" Int="20000"/>
+                        <PropertyValue Property="ResultSizeMaximum" Int="20000"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportType/Document">
+                <Annotation Term="SAP__common.IsDigitSequence"/>
+                <Annotation Term="SAP__common.Label" String="Document Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportType/Partner">
+                <Annotation Term="SAP__common.Text" Path="PartnerName">
+                    <Annotation Term="SAP__UI.TextArrangement" EnumMember="SAP__UI.TextArrangementType/TextLast"/>
+                </Annotation>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/i_businesspartnervh/0001;ps='srvd-zui_mm_nfreport-0001';va='com.sap.gateway.srvd.zui_mm_nfreport.v0001.et-zc_mm_nfreport.partner'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.Label" String="Partner ID"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Partner ID (Customer, Vendor, Business Place)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportType/BusinessPlace">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/i_paytreceiptbusinessplacevh/0001;ps='srvd-zui_mm_nfreport-0001';va='com.sap.gateway.srvd.zui_mm_nfreport.v0001.et-zc_mm_nfreport.businessplace'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.Label" String="Business Place"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportType/CompanyCode">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/i_companycodevh/0001;ps='srvd-zui_mm_nfreport-0001';va='com.sap.gateway.srvd.zui_mm_nfreport.v0001.et-zc_mm_nfreport.companycode'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.Label" String="Company Code"/>
+                <Annotation Term="SAP__common.Heading" String="CoCd"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportType/FiscalYear">
+                <Annotation Term="SAP__common.IsDigitSequence"/>
+                <Annotation Term="SAP__common.Label" String="Fiscal Year"/>
+                <Annotation Term="SAP__common.Heading" String="Year"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportType/NFeNumber">
+                <Annotation Term="SAP__common.Label" String="Nota Fiscal"/>
+                <Annotation Term="SAP__common.Heading" String="Nine-Digit Number"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Nine-Digit Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportType/Type">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/zi_nftype_vh/0001;ps='srvd-zui_mm_nfreport-0001';va='com.sap.gateway.srvd.zui_mm_nfreport.v0001.et-zc_mm_nfreport.type'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.Label" String="Nota Fiscal Type"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportType/Model">
+                <Annotation Term="SAP__common.IsDigitSequence"/>
+                <Annotation Term="SAP__common.Label" String="Nota Fiscal Model"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportType/Direction">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/zi_nfdirect_vh/0001;ps='srvd-zui_mm_nfreport-0001';va='com.sap.gateway.srvd.zui_mm_nfreport.v0001.et-zc_mm_nfreport.direction'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.Label" String="Movement Direction"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportType/DocumentCurrency">
+                <Annotation Term="SAP__common.IsCurrency"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Document Currency"/>
+                <Annotation Term="SAP__common.Heading" String="Curr."/>
+                <Annotation Term="SAP__common.QuickInfo" String="SD Document Currency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportType/NetAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+                <Annotation Term="SAP__common.Label" String="Invoice Net Amount"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportType/CreatedByUser">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="User"/>
+                <Annotation Term="SAP__common.QuickInfo" String="User who created the document"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportType/IsCanceled">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Nota Fiscal Cancelled"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportType/Serie">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Nota Fiscal Series"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportType/FreightAmountWithTaxes">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportType/InsuranceAmountWithTaxes">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportType/ExpensesAmountWithTaxes">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportType/DiscountAmountWithTaxe">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportType/ValueAmountWithTaxes">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="DocumentCurrency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportType/_Items">
+                <Annotation Term="SAP__common.Composition"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/nfReport">
+                <Annotation Term="SAP__capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="_Items"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="true"/>
+                        <PropertyValue Property="UnsupportedExpressions" EnumMember="SAP__capabilities.SearchExpressions/AND SAP__capabilities.SearchExpressions/OR SAP__capabilities.SearchExpressions/NOT SAP__capabilities.SearchExpressions/group SAP__capabilities.SearchExpressions/phrase"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="BusinessPlace"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="CompanyCode"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Type"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Direction"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="CreatedByUser"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="IsCanceled"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Serie"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="FreightAmountWithTaxes"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="InsuranceAmountWithTaxes"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="ExpensesAmountWithTaxes"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="DiscountAmountWithTaxe"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="ValueAmountWithTaxes"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportType">
+                <Annotation Term="SAP__common.Label" String="APP Relatório NF"/>
+                <Annotation Term="SAP__UI.Facets">
+                    <Collection>
+                        <Record Type="SAP__UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Inormações"/>
+                            <PropertyValue Property="ID" String="NFInfo"/>
+                            <PropertyValue Property="Target" AnnotationPath="@SAP__UI.Identification"/>
+                        </Record>
+                        <Record Type="SAP__UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Valores"/>
+                            <PropertyValue Property="ID" String="NFValues"/>
+                            <PropertyValue Property="Target" AnnotationPath="@SAP__UI.FieldGroup#VALUES"/>
+                        </Record>
+                        <Record Type="SAP__UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Itens"/>
+                            <PropertyValue Property="ID" String="NFItems"/>
+                            <PropertyValue Property="Target" AnnotationPath="_Items/@SAP__UI.LineItem"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.FieldGroup" Qualifier="VALUES">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="NetAmount"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Frete"/>
+                                    <PropertyValue Property="Value" Path="FreightAmountWithTaxes"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Seguro"/>
+                                    <PropertyValue Property="Value" Path="InsuranceAmountWithTaxes"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Despesa"/>
+                                    <PropertyValue Property="Value" Path="ExpensesAmountWithTaxes"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Redução"/>
+                                    <PropertyValue Property="Value" Path="DiscountAmountWithTaxe"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Label" String="Valor"/>
+                                    <PropertyValue Property="Value" Path="ValueAmountWithTaxes"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String="Nota Fiscal"/>
+                        <PropertyValue Property="TypeNamePlural" String="Notas Fiscais"/>
+                        <PropertyValue Property="Title">
+                            <Record Type="SAP__UI.DataField">
+                                <PropertyValue Property="Label" String="Nota Fiscal"/>
+                                <PropertyValue Property="Value" Path="Document"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.Identification">
+                    <Collection>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Partner"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="PostingDate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="IssueDate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="BusinessPlace"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="CompanyCode"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="FiscalYear"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Type"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Model"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Direction"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="CreatedByUser"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="CreationDate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="IsCanceled"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="CancellationDate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="NFeNumber"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Serie"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="AccessKey"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.LineItem">
+                    <Collection>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Document"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Partner"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="PostingDate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="IssueDate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="BusinessPlace"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="CompanyCode"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="FiscalYear"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Type"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Model"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Direction"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="NetAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="CreatedByUser"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="CreationDate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="IsCanceled"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="CancellationDate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="NFeNumber"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Serie"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="AccessKey"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Frete"/>
+                            <PropertyValue Property="Value" Path="FreightAmountWithTaxes"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Seguro"/>
+                            <PropertyValue Property="Value" Path="InsuranceAmountWithTaxes"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Despesa"/>
+                            <PropertyValue Property="Value" Path="ExpensesAmountWithTaxes"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Redução"/>
+                            <PropertyValue Property="Value" Path="DiscountAmountWithTaxe"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Valor"/>
+                            <PropertyValue Property="Value" Path="ValueAmountWithTaxes"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.PresentationVariant">
+                    <Record>
+                        <PropertyValue Property="SortOrder">
+                            <Collection>
+                                <Record Type="SAP__common.SortOrderType">
+                                    <PropertyValue Property="Property" PropertyPath="Document"/>
+                                    <PropertyValue Property="Descending" Bool="true"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>Document</PropertyPath>
+                        <PropertyPath>Partner</PropertyPath>
+                        <PropertyPath>PostingDate</PropertyPath>
+                        <PropertyPath>IssueDate</PropertyPath>
+                        <PropertyPath>BusinessPlace</PropertyPath>
+                        <PropertyPath>CompanyCode</PropertyPath>
+                        <PropertyPath>FiscalYear</PropertyPath>
+                        <PropertyPath>Direction</PropertyPath>
+                        <PropertyPath>NFeNumber</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportType/PartnerName">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Name"/>
+                <Annotation Term="SAP__common.Heading" String="Name 1"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Name 1"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/MaterialName">
+                <Annotation Term="SAP__common.Label" String="Material Description"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/CFOPCode">
+                <Annotation Term="SAP__common.Label" String="CFOP"/>
+                <Annotation Term="SAP__common.QuickInfo" String="CFOP Code and Extension"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/IcmsTaxRate">
+                <Annotation Term="SAP__common.Label" String="Tax Rate"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/IpiTaxRate">
+                <Annotation Term="SAP__common.Label" String="Tax Rate"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/DifalTaxRate">
+                <Annotation Term="SAP__common.Label" String="Tax Rate"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/CofinsTaxRate">
+                <Annotation Term="SAP__common.Label" String="Tax Rate"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/PisTaxRate">
+                <Annotation Term="SAP__common.Label" String="Tax Rate"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/StTaxRate">
+                <Annotation Term="SAP__common.Label" String="Tax Rate"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/IcmsDestTaxRate">
+                <Annotation Term="SAP__common.Label" String="Tax Rate"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/IcmsOrigTaxRate">
+                <Annotation Term="SAP__common.Label" String="Tax Rate"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/FcpTaxRate">
+                <Annotation Term="SAP__common.Label" String="Tax Rate"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/IssTaxRate">
+                <Annotation Term="SAP__common.Label" String="Tax Rate"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/IssSdTaxRate">
+                <Annotation Term="SAP__common.Label" String="Tax Rate"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/CofinsIrfTaxRate">
+                <Annotation Term="SAP__common.Label" String="Tax Rate"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/CsllTaxRate">
+                <Annotation Term="SAP__common.Label" String="Tax Rate"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/IrfTaxRate">
+                <Annotation Term="SAP__common.Label" String="Tax Rate"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportItemsType/PisIrfTaxRate">
+                <Annotation Term="SAP__common.Label" String="Tax Rate"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportType/PostingDate">
+                <Annotation Term="SAP__common.Label" String="Posting Date"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportType/IssueDate">
+                <Annotation Term="SAP__common.Label" String="Document Date"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportType/CreationDate">
+                <Annotation Term="SAP__common.Label" String="Date"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Document Creation Date"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportType/CancellationDate">
+                <Annotation Term="SAP__common.Label" String="Cancellation Date"/>
+            </Annotations>
+            <Annotations Target="SAP__self.nfReportType/AccessKey">
+                <Annotation Term="SAP__common.Label" String="Access Key"/>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

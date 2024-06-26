@@ -1,0 +1,26 @@
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+
+specVersion: "3.1"
+metadata:
+  name: br.com.panvel.nfreport.nfreport
+type: application
+builder:
+  resources:
+    excludes:
+      - /test/**
+      - /localService/**
+  customTasks:
+    - name: deploy-to-abap
+      afterTask: generateCachebusterInfo
+      configuration:
+        target:
+          destination: S4_PANVEL
+          url: http://vhdmdds4ci.sap.panvel.com:44300
+          scp: true
+        app:
+          name: ZZ1_MM_NFREPORT
+          description: Relatório de Notas Fiscais
+          package: ZMM036
+          transport: DS4K900398
+        exclude:
+          - /test/
